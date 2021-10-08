@@ -105,17 +105,17 @@ function config_php80() {
 }
 
 function change_port_da() {
-    cd /usr/local/directadmin/conf/
-    vi directadmin.conf
-    killall -9 directadmin
-    service directadmin restart
+    cd /usr/local/directadmin/conf/;
+    vi directadmin.conf;
+    killall -9 directadmin;
+    service directadmin restart;
 }
 
 function change_port_csf() {
-    vi /etc/ssh/sshd_config
-    service sshd restart
-    vi /etc/csf/csf.conf
-    csf -r
+    vi /etc/ssh/sshd_config;
+    service sshd restart;
+    vi /etc/csf/csf.conf;
+    csf -r;
 }
 
 ##
