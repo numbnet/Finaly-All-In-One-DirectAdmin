@@ -142,41 +142,41 @@ menu() {
 ===========================================================
 
                     +++ SYSTEM  +++
-$(ColorGreen '1)') Thông tin Bộ nhớ VPS
-$(ColorGreen '2)') Thông tin CPU - Cấu hình VPS
+$(ColorGreen '        1)') Thông tin Bộ nhớ VPS
+$(ColorGreen '        2)') Thông tin CPU - Cấu hình VPS
 
                     +++ INSTALL +++
-$(ColorGreen '3)') Cài đặt DirectAdmin Mặc định
-$(ColorGreen '4)') Cài đặt DirectAdmin Tuỳ biến 
-$(ColorGreen '5)') Cài đặt OpenLiteSpeed
-$(ColorGreen '6)') Cài đặt MariaDB
-$(ColorGreen '7)') Cài đặt Memcached
-$(ColorGreen '8)') Cài đặt Redis
-$(ColorGreen '9)') Cài đặt FireWall
-$(ColorGreen '10)') Cài đặt Rclone
+$(ColorGreen '        3)') Cài đặt DirectAdmin Mặc định
+$(ColorGreen '        4)') Cài đặt DirectAdmin Tuỳ biến 
+$(ColorGreen '        5)') Cài đặt OpenLiteSpeed
+$(ColorGreen '        6)') Cài đặt MariaDB
+$(ColorGreen '        7)') Cài đặt Memcached
+$(ColorGreen '        8)') Cài đặt Redis
+$(ColorGreen '        9)') Cài đặt FireWall
+$(ColorGreen '        10)') Cài đặt Rclone
 
                     +++ ACTIVE +++
-$(ColorGreen '11)') Active DirectAdmin
+$(ColorGreen '        11)') Active DirectAdmin
 
                     +++ ADVANCED CONFIG +++
-$(ColorGreen '12)') Config PhpMyAdmin
-$(ColorGreen '13)') Config OPcache
-$(ColorGreen '14)') Config Mecached
-$(ColorGreen '15)') Config Redis
-$(ColorGreen '16)') Config OpenLiteSpeed
-$(ColorGreen '17)') Config DirectAdmin
-$(ColorGreen '18)') Config Auto System
-$(ColorGreen '19)') Config PHP 5.6
-$(ColorGreen '20)') Config PHP 7.3
-$(ColorGreen '21)') Config PHP 7.4
-$(ColorGreen '22)') Config PHP 8.0
+$(ColorGreen '        12)') Config PhpMyAdmin
+$(ColorGreen '        13)') Config OPcache
+$(ColorGreen '        14)') Config Mecached
+$(ColorGreen '        15)') Config Redis
+$(ColorGreen '        16)') Config OpenLiteSpeed
+$(ColorGreen '        17)') Config DirectAdmin
+$(ColorGreen '        18)') Config Auto System
+$(ColorGreen '        19)') Config PHP 5.6
+$(ColorGreen '        20)') Config PHP 7.3
+$(ColorGreen '        21)') Config PHP 7.4
+$(ColorGreen '        22)') Config PHP 8.0
 
                     +++ ULTILITIES +++
-$(ColorGreen '23)') Restart OpenLiteSpeed
-$(ColorGreen '24)') Change Port DirectAdmin
-$(ColorGreen '25)') Change Port SSH
+$(ColorGreen '        23)') Restart OpenLiteSpeed
+$(ColorGreen '        24)') Change Port DirectAdmin
+$(ColorGreen '        25)') Change Port SSH
 
-$(ColorGreen '0)') Exit
+$(ColorGreen '        0)') Exit
 
 ===========================================================
                       Vĩnh Minh Đạo
