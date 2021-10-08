@@ -147,13 +147,13 @@ menu() {
 
     +++ INSTALL +++
   $(ColorGreen '3)') Cài đặt DirectAdmin Mặc định
-    $(ColorGreen '4)') Cài đặt DirectAdmin Tuỳ biến 
-    $(ColorGreen '5)') Cài đặt OpenLiteSpeed
-    $(ColorGreen '6)') Cài đặt MariaDB
-    $(ColorGreen '7)') Cài đặt Memcached
-    $(ColorGreen '8)') Cài đặt Redis
-    $(ColorGreen '9)') Cài đặt FireWall
-    $(ColorGreen '10)') Cài đặt Rclone
+  $(ColorGreen '4)') Cài đặt DirectAdmin Tuỳ biến 
+  $(ColorGreen '5)') Cài đặt OpenLiteSpeed
+  $(ColorGreen '6)') Cài đặt MariaDB
+  $(ColorGreen '7)') Cài đặt Memcached
+  $(ColorGreen '8)') Cài đặt Redis
+  $(ColorGreen '9)') Cài đặt FireWall
+  $(ColorGreen '10)') Cài đặt Rclone
 
     +++ ACTIVE +++
   $(ColorGreen '11)') Active DirectAdmin
