@@ -60,7 +60,6 @@ service directadmin restart;
 # Change Port SSH
 vi /etc/ssh/sshd_config;
 service sshd restart;
-vi /etc/csf/csf.conf;
 csf -r;
 reboot;
 clear;
