@@ -39,16 +39,6 @@ wget -P /usr/local/php56/lib/ https://raw.githubusercontent.com/minhvinhdao/Fina
 # PHP80
 rm -f /usr/local/php56/lib/php.ini;
 wget -P /usr/local/php56/lib/ https://raw.githubusercontent.com/minhvinhdao/Finaly-All-In-One-DirectAdmin/main/php80/php.ini && chmod 644 /usr/local/php80/lib/php.ini;
-# Change Port DA
-cd /usr/local/directadmin/conf/;
-vi directadmin.conf;
-killall -9 directadmin;
-service directadmin restart;
-# Change Port SSH
-vi /etc/ssh/sshd_config;
-service sshd restart;
-vi /etc/csf/csf.conf;
-csf -r;
 # One Click PHPMYAMIN
 cd /usr/local/directadmin/;
 ./directadmin set one_click_pma_login 1;
@@ -62,3 +52,15 @@ cd custombuild;
 /usr/local/directadmin/directadmin set check_subdomain_owner 0;
 killall -9 directadmin;
 service directadmin restart;
+# Change Port DA
+cd /usr/local/directadmin/conf/;
+vi directadmin.conf;
+killall -9 directadmin;
+service directadmin restart;
+# Change Port SSH
+vi /etc/ssh/sshd_config;
+service sshd restart;
+vi /etc/csf/csf.conf;
+csf -r;
+reboot;
+clear;

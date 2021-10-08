@@ -105,17 +105,25 @@ function config_php80() {
 }
 
 function change_port_da() {
-    cd /usr/local/directadmin/conf/;
-    vi directadmin.conf;
-    killall -9 directadmin;
-    service directadmin restart;
+    cd /usr/local/directadmin/conf/
+    vi directadmin.conf
+    killall -9 directadmin
+    service directadmin restart
 }
 
 function change_port_csf() {
-    vi /etc/ssh/sshd_config;
-    service sshd restart;
-    vi /etc/csf/csf.conf;
-    csf -r;
+    vi /etc/ssh/sshd_config
+    service sshd restart
+    vi /etc/csf/csf.conf
+    csf -r
+}
+
+function auto_system_clean() {
+
+}
+
+function directadmin_clean() {
+
 }
 
 ##
@@ -175,6 +183,8 @@ menu() {
   $(ColorGreen '23)') Restart OpenLiteSpeed
   $(ColorGreen '24)') Change Port DirectAdmin
   $(ColorGreen '25)') Change Port SSH
+  $(ColorGreen '26)') Clean Auto System
+  $(ColorGreen '27)') Clean DirectAdmin
 
   $(ColorGreen '0)') Exit
 
@@ -281,6 +291,14 @@ $(ColorBlue 'Chọn tuỳ chọn của bạn (Nhập số và nhấn Enter):')
         ;;
     25)
         change_port_csf
+        menu
+        ;;
+    26)
+        fix_start
+        menu
+        ;;
+    27)
+        directadmin_clean
         menu
         ;;
     0) exit 0 ;;
