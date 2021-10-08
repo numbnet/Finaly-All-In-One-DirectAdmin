@@ -21,6 +21,7 @@ wget -P /usr/local/directadmin/custombuild/ https://raw.githubusercontent.com/mi
 
 wget -P /usr/local/directadmin/custombuild/ https://raw.githubusercontent.com/minhvinhdao/Finaly-All-In-One-DirectAdmin/main/options.conf && chmod 644 /usr/local/directadmin/custombuild/php_extensions.conf;
 
+pear install PHP_Archive -y;
 OS=`uname`;
 
 if [ "$(id -u)" != "0" ]; then
