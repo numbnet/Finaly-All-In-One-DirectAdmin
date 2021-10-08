@@ -138,8 +138,8 @@ ColorBlue() {
 menu() {
     echo -ne "
 ===========================================================
-                 Master DirectAdmin Scripts
-===========================================================
+                 DIRECTAMIN MASTER SCRIPT
+                 ========================
 
     +++ SYSTEM  +++
   $(ColorGreen '1)') Thông tin Bộ nhớ VPS
@@ -178,8 +178,6 @@ menu() {
 
   $(ColorGreen '0)') Exit
 
-===========================================================
-                      Vĩnh Minh Đạo
 ===========================================================
 $(ColorBlue 'Chọn tuỳ chọn của bạn (Nhập số và nhấn Enter):') 
 "
