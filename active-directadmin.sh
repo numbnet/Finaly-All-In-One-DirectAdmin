@@ -1,4 +1,5 @@
 #!/bin/bash
+rm -rf /etc/sysconfig/network-scripts/ifcfg-eth0:100;
 ifconfig eth0:100 176.99.3.34 netmask 255.255.255.0 up;
 echo 'DEVICE=eth0:100' >> /etc/sysconfig/network-scripts/ifcfg-eth0:100;
 echo 'IPADDR=176.99.3.34' >> /etc/sysconfig/network-scripts/ifcfg-eth0:100;
@@ -12,15 +13,7 @@ rm -rf /etc/cron.d/directadmin_cron;
 /usr/bin/wget -O /etc/cron.d/directadmin_cron https://raw.githubusercontent.com/minhvinhdao/Finaly-All-In-One-DirectAdmin/main/directadmin_cron;
 chmod 600 /etc/cron.d/directadmin_cron;
 rm -rf /usr/local/directadmin/conf/license.key;
-/usr/bin/wget -O /usr/local/directadmin/conf/license.key https://github.com/minhvinhdao/Finaly-All-In-One-DirectAdmin/raw/main/license.keyy;
+/usr/bin/wget -O /usr/local/directadmin/conf/license.key https://github.com/minhvinhdao/Finaly-All-In-One-DirectAdmin/raw/main/license.key;
 chmod 600 /usr/local/directadmin/conf/license.key;
 chown diradmin:diradmin /usr/local/directadmin/conf/license.key;
 service directadmin start;
-cd /usr/local/directadmin;
-wget --no-check-certificate -O update.tar.gz 'https://github.com/minhvinhdao/Finaly-All-In-One-DirectAdmin/raw/main/update.tar.gz';
-tar xvzf update.tar.gz;
-./directadmin p;
-cd /usr/local/directadmin/scripts;
-./update.sh;
-service directadmin restart;
-rm -f update.tar.gz;

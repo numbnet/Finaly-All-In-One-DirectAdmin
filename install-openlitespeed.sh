@@ -10,4 +10,4 @@ cd /usr/local/directadmin/custombuild;
 ./build openlitespeed;
 ./build php n;
 ./build rewrite_confs;
-wget -P /root/ https://raw.githubusercontent.com/minhvinhdao/Finaly-All-In-One-DirectAdmin/main/crontab && chmod 644 crontab;
+wget -P /root/ https://raw.githubusercontent.com/minhvinhdao/Finaly-All-In-One-DirectAdmin/main/crontab && chmod 644 /root/crontab;
