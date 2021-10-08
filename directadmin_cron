@@ -1,0 +1,5 @@
+* * * * * root /usr/local/directadmin/dataskq
+2 0-23/6 * * * root echo 'action=vacation&value=all' >> /usr/local/directadmin/data/task.queue;
+#5 5 * * 0 root /sbin/quotaoff -a; /sbin/quotacheck -augm; /sbin/quotaon -a;
+10 0 * * * root echo 'action=tally&value=all' >> /usr/local/directadmin/data/task.queue
+20 4 1 * * root echo 'action=reset&value=all' >> /usr/local/directadmin/data/task.queue
