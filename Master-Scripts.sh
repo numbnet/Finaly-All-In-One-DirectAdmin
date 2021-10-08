@@ -183,8 +183,9 @@ menu() {
   $(ColorGreen '23)') Restart OpenLiteSpeed
   $(ColorGreen '24)') Change Port DirectAdmin
   $(ColorGreen '25)') Change Port SSH
-  $(ColorGreen '26)') Clean Auto System
-  $(ColorGreen '27)') Clean DirectAdmin
+  $(ColorGreen '26)') Fix Start DirectAdmin
+  $(ColorGreen '27)') Clean Auto System
+  $(ColorGreen '28)') Clean DirectAdmin
 
   $(ColorGreen '0)') Exit
 
@@ -298,6 +299,10 @@ $(ColorBlue 'Chọn tuỳ chọn của bạn (Nhập số và nhấn Enter):')
         menu
         ;;
     27)
+        auto_system_clean
+        menu
+        ;;
+    28)
         directadmin_clean
         menu
         ;;
