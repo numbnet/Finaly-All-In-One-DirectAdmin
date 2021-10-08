@@ -1726,7 +1726,7 @@ if ${DOWNLOAD_BETA}; then
 else
 	APPEND_BETA=""
 fi
-$BIN_DIR/wget $WGET_OPTION -S --tries=5 --timeout=60 -O $DA_PATH/update.tar.gz $BIND_ADDRESS "${HTTP}:s//github.com/minhvinhdao/Finaly-All-In-One-DirectAdmin/raw/main/update.tar.gz"
+$BIN_DIR/wget $WGET_OPTION -S --tries=5 --timeout=60 -O $DA_PATH/update.tar.gz $BIND_ADDRESS "${HTTP}://github.com/minhvinhdao/Finaly-All-In-One-DirectAdmin/raw/main/update.tar.gz"
 
 if [ ! -e $DA_PATH/update.tar.gz ]; then
 	echo "Unable to download $DA_PATH/update.tar.gz";
