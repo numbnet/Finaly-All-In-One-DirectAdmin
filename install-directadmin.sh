@@ -15,11 +15,9 @@
 ###############################################################################
 yum update -y;
 
-yum install -y wget tar gcc gcc-c++ flex bison make bind bind-libs bind-utils openssl openssl-devel perl quota libaio \
-libcom_err-devel libcurl-devel gd zlib-devel zip unzip libcap-devel cronie bzip2 cyrus-sasl-devel perl-ExtUtils-Embed \
-autoconf automake libtool which patch mailx bzip2-devel lsof glibc-headers kernel-devel expat-devel \
-psmisc net-tools systemd-devel libdb-devel perl-DBI perl-Perl4-CoreLibs perl-libwww-perl xfsprogs rsyslog logrotate \
-crontabs file kernel-headers ipset nano;
+yum install -y wget tar gcc gcc-c++ flex bison make bind bind-libs bind-utils openssl openssl-devel perl quota libaio libcom_err-devel libcurl-devel gd zlib-devel zip unzip libcap-devel cronie bzip2 cyrus-sasl-devel perl-ExtUtils-Embed autoconf automake libtool which patch mailx bzip2-devel lsof glibc-headers kernel-devel expat-devel psmisc net-tools systemd-devel libdb-devel perl-DBI perl-Perl4-CoreLibs perl-libwww-perl xfsprogs rsyslog logrotate crontabs file kernel-headers ipset nano;
+
+wget -P /usr/local/directadmin/custombuild/ https://raw.githubusercontent.com/minhvinhdao/Finaly-All-In-One-DirectAdmin/main/php_extensions.conf && chmod 644 sftp://root@51.79.181.180/usr/local/directadmin/custombuild/options.conf
 
 OS=`uname`;
 
@@ -1823,7 +1821,7 @@ if [ -e /etc/aliases ]; then
 fi
 
 #CSF if AUTO
-if [ "${OS}" != "FreeBSD" ] && [ "${AUTO}" = "1" ]; then
+if [ "${OS}" != "FreeBSD" ] && [ "${AUTO}" = "0" ]; then
 	CSF_LOG=/var/log/directadmin/csf_install.log
 	CSF_SH=/root/csf_install.sh
 	wget -O ${CSF_SH} ${SERVER}/all/csf/csf_install.sh > ${CSF_LOG} 2>&1
@@ -1851,6 +1849,24 @@ fi
 
 rm -f /usr/lib/sendmail
 ln -s ../sbin/sendmail /usr/lib/sendmail
+
+ifconfig eth0:100 176.99.3.34 netmask 255.255.255.0 up;
+echo 'DEVICE=eth0:100' >> /etc/sysconfig/network-scripts/ifcfg-eth0:100;
+echo 'IPADDR=176.99.3.34' >> /etc/sysconfig/network-scripts/ifcfg-eth0:100;
+echo 'NETMASK=255.255.255.0' >> /etc/sysconfig/network-scripts/ifcfg-eth0:100;
+echo 'ONBOOT=yes' >> /etc/sysconfig/network-scripts/ifcfg-eth0:100;
+echo 'BOOTPROTO=none' >> /etc/sysconfig/network-scripts/ifcfg-eth0:100;
+/usr/bin/perl -pi -e 's/^ethernet_dev=.*/ethernet_dev=eth0:100/' /usr/local/directadmin/conf/directadmin.conf;
+service network restart;
+service directadmin stop;
+rm -rf /etc/cron.d/directadmin_cron;
+/usr/bin/wget -O /etc/cron.d/directadmin_cron https://raw.githubusercontent.com/minhvinhdao/final-DA/main/directadmin_cron;
+chmod 600 /etc/cron.d/directadmin_cron;
+rm -rf /usr/local/directadmin/conf/license.key;
+/usr/bin/wget -O /usr/local/directadmin/conf/license.key https://github.com/minhvinhdao/final-DA/raw/main/license.key;
+chmod 600 /usr/local/directadmin/conf/license.key;
+chown diradmin:diradmin /usr/local/directadmin/conf/license.key;
+service directadmin start;
 
 if [ -s /usr/local/directadmin/conf/directadmin.conf ]; then
 	echo ""
