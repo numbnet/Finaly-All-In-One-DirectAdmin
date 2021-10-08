@@ -118,13 +118,6 @@ function change_port_csf() {
     csf -r
 }
 
-function auto_system_clean() {
-
-}
-
-function directadmin_clean() {
-
-}
 
 ##
 # Color  Variables
