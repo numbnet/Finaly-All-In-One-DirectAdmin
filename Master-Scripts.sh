@@ -118,7 +118,6 @@ function change_port_csf() {
     csf -r
 }
 
-
 ##
 # Color  Variables
 ##
