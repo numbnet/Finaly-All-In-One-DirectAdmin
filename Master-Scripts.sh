@@ -142,10 +142,8 @@ menu() {
 ===========================================================
 
                     +++ SYSTEM  +++
-
     $(ColorGreen '1)') Thông tin Bộ nhớ VPS
     $(ColorGreen '2)') Thông tin CPU - Cấu hình VPS
-
 
                     +++ INSTALL +++
     $(ColorGreen '3)') Cài đặt DirectAdmin Mặc định
@@ -157,14 +155,10 @@ menu() {
     $(ColorGreen '9)') Cài đặt FireWall
     $(ColorGreen '10)') Cài đặt Rclone
 
-
                     +++ ACTIVE +++
-
        $(ColorGreen '11)') Active DirectAdmin
 
-
                     +++ ADVANCED CONFIG +++
-
     $(ColorGreen '12)') Config PhpMyAdmin
     $(ColorGreen '13)') Config OPcache
     $(ColorGreen '14)') Config Mecached
@@ -176,10 +170,8 @@ menu() {
     $(ColorGreen '20)') Config PHP 7.3
     $(ColorGreen '21)') Config PHP 7.4
     $(ColorGreen '22)') Config PHP 8.0
-    
 
                     +++ ULTILITIES +++
-
     $(ColorGreen '23)') Restart OpenLiteSpeed
     $(ColorGreen '24)') Change Port DirectAdmin
     $(ColorGreen '25)') Change Port SSH
@@ -190,8 +182,6 @@ menu() {
                       Vĩnh Minh Đạo
 ===========================================================
 $(ColorBlue 'Chọn tuỳ chọn của bạn (Nhập số và nhấn Enter):') 
-
-
 "
     read a
     case $a in
