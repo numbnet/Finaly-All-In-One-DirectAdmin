@@ -181,7 +181,10 @@ $(ColorGreen '        0)') Exit
 ===========================================================
                       Vĩnh Minh Đạo
 ===========================================================
-$(ColorBlue 'Chọn tuỳ chọn của bạn (Nhập số và nhấn Enter):') "
+$(ColorBlue 'Chọn tuỳ chọn của bạn (Nhập số và nhấn Enter):') 
+
+
+"
     read a
     case $a in
     1)
