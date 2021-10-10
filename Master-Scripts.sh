@@ -130,6 +130,14 @@ function restart_da() {
 function get_myAdmin_pass() {
     cat /usr/local/directadmin/conf/mysql.conf
 }
+
+function change_pass_da() {
+    passwd admin
+}
+
+function change_pass_vps() {
+    passwd
+}
 ##
 # Color  Variables
 ##
@@ -193,6 +201,8 @@ menu() {
   $(ColorGreen '29)') Reboot VPS
   $(ColorGreen '30)') Restart DirectAdmin
   $(ColorGreen '31)') Get DA_Admin Pass
+  $(ColorGreen '31)') Change Pass DA
+  $(ColorGreen '31)') Change Pass Root
 
   $(ColorGreen '0)') Exit
 
@@ -323,6 +333,14 @@ $(ColorBlue 'Chọn tuỳ chọn của bạn (Nhập số và nhấn Enter):')
         ;;
     31)
         get_myAdmin_pass
+        menu
+        ;;
+    31)
+        change_pass_da
+        menu
+        ;;
+    31)
+        change_pass_vps
         menu
         ;;
     0) exit 0 ;;
