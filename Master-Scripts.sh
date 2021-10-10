@@ -105,19 +105,31 @@ function config_php80() {
 }
 
 function change_port_da() {
-    cd /usr/local/directadmin/conf/;
-    vi directadmin.conf;
-    killall -9 directadmin;
-    service directadmin restart;
+    cd /usr/local/directadmin/conf/
+    vi directadmin.conf
+    killall -9 directadmin
+    service directadmin restart
 }
 
 function change_port_csf() {
-    vi /etc/ssh/sshd_config;
-    service sshd restart;
-    vi /etc/csf/csf.conf;
-    csf -r;
+    vi /etc/ssh/sshd_config
+    service sshd restart
+    vi /etc/csf/csf.conf
+    csf -r
 }
 
+function reboot_vps() {
+    reboot
+}
+
+function restart_da() {
+    killall -9 directadmin
+    service directadmin restart
+}
+
+function get_myAdmin_pass() {
+    cat /usr/local/directadmin/conf/mysql.conf
+}
 ##
 # Color  Variables
 ##
@@ -178,6 +190,9 @@ menu() {
   $(ColorGreen '26)') Fix Start DirectAdmin
   $(ColorGreen '27)') Clean Auto System
   $(ColorGreen '28)') Clean DirectAdmin
+  $(ColorGreen '29)') Reboot VPS
+  $(ColorGreen '30)') Restart DirectAdmin
+  $(ColorGreen '31)') Get DA_Admin Pass
 
   $(ColorGreen '0)') Exit
 
@@ -296,6 +311,18 @@ $(ColorBlue 'Chọn tuỳ chọn của bạn (Nhập số và nhấn Enter):')
         ;;
     28)
         directadmin_clean
+        menu
+        ;;
+    29)
+        reboot_vps
+        menu
+        ;;
+    30)
+        restart_da
+        menu
+        ;;
+    31)
+        get_myAdmin_pass
         menu
         ;;
     0) exit 0 ;;
