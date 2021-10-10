@@ -1,4 +1,7 @@
 #!/bin/bash
+function pause(){
+   read -p "$*"
+}
 # OPcache
 cd /usr/local/directadmin/custombuild;
 mkdir -p custom/opcache/;
@@ -71,5 +74,6 @@ vi /etc/ssh/sshd_config;
 service sshd restart;
 vi /etc/csf/csf.conf;
 csf -r;
+pause '                        Nhấn [Enter] để tiếp tục...';
 reboot;
 clear;
