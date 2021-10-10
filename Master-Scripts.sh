@@ -201,8 +201,8 @@ menu() {
   $(ColorGreen '29)') Reboot VPS
   $(ColorGreen '30)') Restart DirectAdmin
   $(ColorGreen '31)') Get DA_Admin Pass
-  $(ColorGreen '31)') Change Pass DA
-  $(ColorGreen '31)') Change Pass Root
+  $(ColorGreen '32)') Change Pass DA
+  $(ColorGreen '33)') Change Pass Root
 
   $(ColorGreen '0)') Exit
 
@@ -335,11 +335,11 @@ $(ColorBlue 'Chọn tuỳ chọn của bạn (Nhập số và nhấn Enter):')
         get_myAdmin_pass
         menu
         ;;
-    31)
+    32)
         change_pass_da
         menu
         ;;
-    31)
+    33)
         change_pass_vps
         menu
         ;;
