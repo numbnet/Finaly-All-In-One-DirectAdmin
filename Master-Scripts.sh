@@ -131,13 +131,18 @@ function get_myAdmin_pass() {
     cat /usr/local/directadmin/conf/mysql.conf
 }
 
+function get_daAdmin_pass() {
+    cat /var/log/directadmin/install.log | grep Admin
+}
+
 function change_pass_da() {
     passwd admin
 }
 
 function change_pass_vps() {
-    passwd
+    passwd root
 }
+
 ##
 # Color  Variables
 ##
@@ -200,9 +205,10 @@ menu() {
   $(ColorGreen '28)') Clean DirectAdmin
   $(ColorGreen '29)') Reboot VPS
   $(ColorGreen '30)') Restart DirectAdmin
-  $(ColorGreen '31)') Get DA_Admin Pass
-  $(ColorGreen '32)') Change Pass DA
-  $(ColorGreen '33)') Change Pass Root
+  $(ColorGreen '31)') Get DA_Admin SQL Pass
+  $(ColorGreen '32)') Get User Admin Pass
+  $(ColorGreen '33)') Change Pass DA
+  $(ColorGreen '34)') Change Pass Root
 
   $(ColorGreen '0)') Exit
 
@@ -336,10 +342,14 @@ $(ColorBlue 'Chọn tuỳ chọn của bạn (Nhập số và nhấn Enter):')
         menu
         ;;
     32)
-        change_pass_da
+        get_daAdmin_pass
         menu
         ;;
     33)
+        change_pass_da
+        menu
+        ;;
+    34)
         change_pass_vps
         menu
         ;;
