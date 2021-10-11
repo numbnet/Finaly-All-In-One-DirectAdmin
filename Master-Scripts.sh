@@ -148,8 +148,9 @@ function change_pass_vps() {
 
 function rename_auto_system() {
     wget -P /root/ https://raw.githubusercontent.com/minhvinhdao/Finaly-All-In-One-DirectAdmin/main/doiten.sh && chmod a+x /root/doiten.sh
-    pause '                       [Enter] ...';
-    ./root/doiten.sh;
+    pause '                       [Enter] ...'
+    cd /root
+    ./doiten.sh
 }
 
 ##
@@ -218,6 +219,7 @@ menu() {
   $(ColorGreen '32)') Get User Admin Pass
   $(ColorGreen '33)') Change Pass DA
   $(ColorGreen '34)') Change Pass Root
+  $(ColorGreen '35)') Rename Auto System
 
   $(ColorGreen '0)') Exit
 
@@ -360,6 +362,10 @@ $(ColorBlue 'Chọn tuỳ chọn của bạn (Nhập số và nhấn Enter):')
         ;;
     34)
         change_pass_vps
+        menu
+        ;;
+    35)
+        rename_auto_system
         menu
         ;;
     0) exit 0 ;;
