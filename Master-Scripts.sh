@@ -1,6 +1,9 @@
 #!/bin/bash
 
 server_name=$(hostname)
+function pause() {
+    read -p "$*"
+}
 
 function memory_check() {
     echo ""
@@ -141,6 +144,12 @@ function change_pass_da() {
 
 function change_pass_vps() {
     passwd root
+}
+
+function rename_auto_system() {
+    wget -P /root/ https://raw.githubusercontent.com/minhvinhdao/Finaly-All-In-One-DirectAdmin/main/doiten.sh && chmod a+x /root/doiten.sh
+    pause '                       [Enter] ...';
+    ./root/doiten.sh;
 }
 
 ##
