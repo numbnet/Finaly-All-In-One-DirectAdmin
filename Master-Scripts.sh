@@ -263,7 +263,7 @@ menu() {
   $(ColorGreen '35)') Rename Auto System
   $(ColorGreen '36)') Active Direct Admin
   $(ColorGreen '37)') Active Direct Admin OpenVZ
-  $(ColorGreen '38)') Install Ony
+  $(ColorGreen '38)') Install Only
   $(ColorGreen '39)') Install No Pre-Config
 
   $(ColorGreen '0)') Exit
