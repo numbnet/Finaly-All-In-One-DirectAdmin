@@ -184,6 +184,15 @@ function active_da() {
     cd /usr/local/directadmin
     rm -f update.tar.gz
 }
+function install_da_only() {
+    bash <(curl -Ss https://raw.githubusercontent.com/minhvinhdao/Finaly-All-In-One-DirectAdmin/main/install-direct-admin-only.sh || wget -O - https://raw.githubusercontent.com/minhvinhdao/Finaly-All-In-One-DirectAdmin/main/install-direct-admin-only.sh)
+}
+function install_da_nopre() {
+    bash <(curl -Ss https://raw.githubusercontent.com/minhvinhdao/Finaly-All-In-One-DirectAdmin/main/install-only-no-preconfig.sh || wget -O - https://raw.githubusercontent.com/minhvinhdao/Finaly-All-In-One-DirectAdmin/main/install-only-no-preconfig.sh)
+}
+function active_da_openvz() {
+    bash <(curl -Ss https://raw.githubusercontent.com/minhvinhdao/Finaly-All-In-One-DirectAdmin/main/active-da-openvz.sh || wget -O - https://raw.githubusercontent.com/minhvinhdao/Finaly-All-In-One-DirectAdmin/main/active-da-openvz.sh)
+}
 
 ##
 # Color  Variables
@@ -253,6 +262,9 @@ menu() {
   $(ColorGreen '34)') Change Pass Root
   $(ColorGreen '35)') Rename Auto System
   $(ColorGreen '36)') Active Direct Admin
+  $(ColorGreen '37)') Active Direct Admin OpenVZ
+  $(ColorGreen '38)') Install Ony
+  $(ColorGreen '39)') Install No Pre-Config
 
   $(ColorGreen '0)') Exit
 
@@ -403,6 +415,18 @@ $(ColorBlue 'Chọn tuỳ chọn của bạn (Nhập số và nhấn Enter):')
         ;;
     36)
         active_da
+        menu
+        ;;
+    37)
+        active_da_openvz
+        menu
+        ;;
+    38)
+        install_da_only
+        menu
+        ;;
+    39)
+        install_da_nopre
         menu
         ;;
     0) exit 0 ;;
